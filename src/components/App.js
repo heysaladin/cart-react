@@ -47,6 +47,15 @@ class App extends Component {
     this.setState({ cartItems });
   };
 
+  handleRemoveItemFromCartAlter = currentItem => {
+    const cartItemsState = this.state.cartItems;
+    const selectedItemIndex = cartItemsState.findIndex(cartItem => {
+      return cartItem.product.id === cartItem.product.id;
+    });
+    const selectedItem = cartItemsState[selectedItemIndex];
+
+  };
+
   componentDidMount() {
     this.setState({ isLoading: true });
     fetch('https://product-list.glitch.me/')
